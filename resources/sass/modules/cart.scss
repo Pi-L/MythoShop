@@ -1,0 +1,255 @@
+@use '../commons/palette';
+@use '../commons/variables' as var;
+
+.cart__container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    > .cart--item {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+        grid-template-rows: minmax(0, 10rem) minmax(0, 5rem);
+        gap: 0.5rem;
+
+        grid-template-areas:
+            'image description'
+            'image actions';
+
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+        box-shadow: var(--shadowBox);
+        margin-bottom: 1rem;
+
+        width: 100%;
+
+        > * {
+            margin: 0;
+        }
+
+        > .remove--link__container {
+            grid-area: image;
+
+            position: relative;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+
+            > img {
+                object-fit: cover;
+                width: 100%;
+            }
+
+            .remove {
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -50%;
+                text-align: center;
+                background-color: var(--primaryHighlightFilter);
+                padding: 0.6rem 0;
+                transition: top 0.3s;
+
+                font-weight: 700;
+            }
+
+            &:hover,
+            &:focus {
+                .remove {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        > .description {
+            grid-area: description;
+            padding-left: 2rem;
+
+            h3 {
+                font-size: 3rem;
+                padding-bottom: 0.5rem;
+                a {
+                    display: block;
+                }
+            }
+        }
+
+        > .actions {
+            grid-area: actions;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 2rem;
+
+            > .quantity {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: center;
+
+                input {
+                    margin: 0 0.5rem;
+                    width: 8rem;
+                    text-align: center;
+                }
+
+                input[type='submit'] {
+                    flex: 0 0 0;
+                    max-width: 0;
+                    max-height: 0;
+                    min-width: 0;
+                    min-height: 0;
+                    padding: 0;
+                    margin: 0;
+                    border: none;
+                }
+
+                label {
+                    cursor: pointer;
+
+                    &::before {
+                        transform: scale(1);
+                    }
+                    &::after {
+                        content: none;
+                    }
+                    &:hover,
+                    &:focus {
+                        color: var(--primaryHighlight);
+                        &::before {
+                            transform: scale(1.05);
+                        }
+                    }
+                }
+
+                > .legend {
+                    margin-right: 1rem;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    justify-content: center;
+
+                    .warning {
+                        color: rgb(139, 20, 20);
+                        font-size: 0.8em;
+                        text-align: center;
+                        font-style: italic;
+                    }
+                }
+
+                > .cart__updateProduct {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+
+                    margin-right: 0.5rem;
+
+                    .saveIcon {
+                        font-size: 1.4em;
+                        margin-right: 0.5rem;
+                    }
+                }
+
+                > .cart__updateProduct--Relative {
+                    display: flex;
+                    flex-flow: column nowrap;
+                    align-items: center;
+                    justify-content: center;
+
+                    > label {
+                        font-size: 1.1em;
+                        line-height: 1em;
+                    }
+                }
+            }
+        }
+    }
+    > .cart__shipping {
+        margin-top: 2rem;
+        margin: 4rem auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 2rem;
+
+        > .shipping__choice {
+            grid-column: 1;
+            justify-self: center;
+
+            padding: 1rem 2.5rem 2rem;
+            border-radius: 2rem;
+
+            display: grid;
+            align-items: center;
+
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: repeat(2, 3rem);
+            column-gap: 2rem;
+            row-gap: 1rem;
+
+            > div {
+                grid-column: 1 / span 1;
+            }
+
+            > .shippingSubmit {
+                grid-column: 2 / span 1;
+                grid-row: 1 / span 2;
+            }
+        }
+    }
+
+    .subtotal,
+    .shippingCost {
+        grid-column: 2;
+        justify-self: end;
+
+        width: max-content;
+        padding: 2rem 2.5rem;
+        text-align: center;
+
+        border-radius: 1.5rem;
+        box-shadow: var(--shadowBox);
+    }
+
+    .shippingCost {
+        align-self: end;
+    }
+
+    .subtotal {
+        align-self: start;
+    }
+
+    > .cartValidation {
+        display: block;
+        width: auto;
+        align-self: center;
+        background-color: var(--primaryHighlight);
+        color: var(--highlightTxt);
+        font-size: 2.3rem;
+        font-weight: 900;
+        padding: 1.5rem 3rem;
+        margin-top: 2rem;
+        border-radius: 1rem;
+
+        user-select: none;
+
+        box-shadow: 0rem 0rem rgb(231, 150, 2, 0.5);
+
+        transition: all 0.3s;
+
+        &:focus,
+        &:hover {
+            background-color: var(--highlightTxt);
+            color: var(--primaryHighlight);
+        }
+
+        &:active {
+            box-shadow: 0.5rem 0.5rem rgb(231, 150, 2, 0.5);
+        }
+    }
+}

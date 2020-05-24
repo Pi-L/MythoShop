@@ -1,0 +1,51 @@
+@use '../commons/palette';
+
+.home__intro {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.home__intro:last-of-type {
+  margin-bottom: 8rem;
+}
+
+.home__section--presentation {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  margin-bottom: 5rem;
+
+  .card {
+    flex: 0 1 auto;
+
+    .card__price-tag {
+      display: none;
+    }
+
+    img {
+      max-width: 40rem;
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+
+  p {
+    flex: 0 1 100%;
+    padding: 0 1rem;
+    align-self: center;
+    margin-right: 2rem;
+  }
+
+  &:nth-of-type(2n) {
+    flex-flow: row-reverse nowrap;
+    p {
+      margin-right: 0;
+      margin-left: 2rem;
+    }
+
+    .card img {
+      margin-right: auto;
+      margin-left: 0;
+    }
+  }
+}

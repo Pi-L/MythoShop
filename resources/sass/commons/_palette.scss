@@ -1,0 +1,17 @@
+body {
+    --primaryBg: #100e17;
+    --secondaryBg: #1e1e24;
+    --primaryHighlight: #e79602;
+    --primaryTxt: #e7e7e8;
+
+    --secondaryHighlight: rgb(1, 86, 104);
+    --highlightTxt: #f9f6f7;
+    --secondaryTxt: var(--secondaryBg);
+
+    --shadowColor: #000;
+    --shadowBox: -1rem 0 3rem var(--shadowColor);
+    --primaryFilter: rgba(0, 0, 0, 0.8);
+    --secondaryFilter: rgba(255, 255, 255, 0.2);
+
+    --primaryHighlightFilter: rgba(1, 86, 104, 0.8);
+}

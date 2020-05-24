@@ -1,0 +1,49 @@
+@use '../commons/variables' as var;
+@use '../commons/palette';
+@use '../commons/mixins' as cmx;
+
+.footer {
+    position: relative;
+    background-color: var(--primaryTxt);
+    color: var(--primaryBg);
+    width: 100%;
+    height: var(--footerHeight);
+    z-index: 200;
+    .container {
+        height: 100%;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        ul {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        li {
+            margin-right: 3rem;
+            padding: 1rem;
+            font-size: 2rem;
+        }
+
+        a {
+            @include cmx.hover-underline-animation-shrink(
+                var(--primaryHighlight),
+                -30%,
+                0.2rem,
+                70%,
+                isInView
+            );
+        }
+
+        @media screen and (max-width: (60em  * var.$mediaRatio)) {
+            li {
+                margin-right: 0rem;
+                padding: 1rem 0.5rem;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/css/modules/main.css": "/css/modules/main.css",
+    "/css/modules/product.css": "/css/modules/product.css",
+    "/css/modules/cart.css": "/css/modules/cart.css",
+    "/css/modules/order.css": "/css/modules/order.css",
+    "/css/modules/user.css": "/css/modules/user.css"
+}

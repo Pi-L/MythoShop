@@ -1,0 +1,13 @@
+$mediaRatio: 10 / 16;
+
+body {
+    --headerHeight: 20rem;
+    --navbarHeight: 6rem;
+    --footerHeight: 8rem;
+
+    @media screen and (max-width: (100em  * $mediaRatio)) {
+        // --headerHeight: 16rem;
+        --navbarHeight: 5rem;
+        --footerHeight: 6rem;
+    }
+}
