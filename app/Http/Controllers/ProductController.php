@@ -34,6 +34,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
+
         return View('product.show', ['product' => $product]);
     }
 
