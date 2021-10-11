@@ -1,7 +1,7 @@
 # MythoShop
 
 ## Description
-*This is an eCommerce App exercise I developed with the Laravel Framework while learning web development at [CEFIM][8].* 
+*This is an eCommerce App exercise I developed with the Laravel Framework while learning web development.* 
 
 **Date : 04/2020**
 
@@ -17,6 +17,5 @@
 [2]: https://sass-lang.com/dart-sass
 [3]: https://github.com/darryldecode/laravelshoppingcart
 [4]: https://github.com/stripe/stripe-php
-[8]: https://www.cefim.eu
 [9]: https://fontawesome.com/how-to-use/on-the-web/using-with/sass
 
